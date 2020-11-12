@@ -9,13 +9,13 @@ D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\bin\x64\Debug\AmbientAICallouts.pdb
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\bin\x64\Debug\de\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
-D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\AmbientAICallouts\bin\x64\Debug\AiC_Example.dll
-D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\AmbientAICallouts\bin\x64\Debug\AiC_Example.pdb
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\obj\x64\Debug\Example_AiC.csprojAssemblyReference.cache
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\obj\x64\Debug\Example_AiC.csproj.CoreCompileInputs.cache
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\obj\x64\Debug\Example_AiC.csproj.CopyComplete
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\obj\x64\Debug\AiC_Example.dll
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default AiCallouts Pack\AiC_Example\obj\x64\Debug\AiC_Example.pdb
+D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\AmbientAICallouts\bin\x64\Debug\AiC_Example.dll
+D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\AmbientAICallouts\bin\x64\Debug\AiC_Example.pdb
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default-AiCallouts-Pack\AiC_Example\obj\x64\Debug\Example_AiC.csprojAssemblyReference.cache
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default-AiCallouts-Pack\AiC_Example\obj\x64\Debug\Example_AiC.csproj.CoreCompileInputs.cache
 D:\#UserData\Dokumente 2 - TB\Development\Visual Studio\Repos\AmbientAICallouts\src\Default-AiCallouts-Pack\AiC_Example\obj\x64\Debug\Example_AiC.csproj.CopyComplete
