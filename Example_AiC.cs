@@ -55,7 +55,7 @@ namespace Example_AiC
                 else  //if vehicle is reaching its location
                 {
 
-                    GameFiber.WaitWhile(() => Unit.Position.DistanceTo(location) >= 40f, 0);
+                    GameFiber.WaitWhile(() => Unit.Position.DistanceTo(location) >= 40f, 0); //Slow down the unit to not rush into the scene
                     Unit.IsSirenSilent = true;
                     Unit.TopSpeed = 12f;
 
@@ -64,20 +64,17 @@ namespace Example_AiC
 
                     if (playerRespondingInAdditon) //if the player responds as a additional unit to the AiCallout
                     {
-                        // doStuff 
                         // when player is also responding
                     }
                     else //if the player is not responding as additional
                     { 
-                        if (IsAiTakingCare()) //do something without calling the player for backup
+                        if (IsAiTakingCare()) //do we escalate into an PlayerCallout or let the Ai handle it themself
                         {
-                            //doStuff
+                            //do something without calling the player for backup
                         }
                         else //do something and call the player for backup
                         {
-                        
-                            //decision tree what callout shall get triggered
-                            switch (new Random().Next(0, 5))
+                            switch (new Random().Next(0, 5))  //decision tree what callout shall get triggered
                             {
                                 case 0:
                                     UnitCallsForBackup("AAIC-OfficerDown");

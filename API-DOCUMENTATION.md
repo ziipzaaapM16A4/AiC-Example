@@ -202,38 +202,15 @@
 
 
 
-## Decicion Functions & arrival
-	/// <summary>This function will count (as soon as called) how much time the unit need to reach a specific distance to the callout location.</summary>
-	/// <param name="distance">The distance it needs to reach in order of not returning false</param>
-	/// <param name="time">Time in seconds until the vehicle have to get a lower distance to the callout that given by distance</param>
-	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
-	/// <returns>returns false if the unit had not a lower distance to the callout in the specific time</returns
-    public static bool IsUnitInTime(AiCalloutManager given_mO, float distance, int time)
-
-
-	/// <summary>Leaving Vehicle</summary><param name="leaveDoorOpen">police officers leave door open</param>
-	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
-    public static void OfficersLeaveVehicle(AiCalloutManager given_mO, bool leaveDoorOpen)
-
-
+## Decicion Functions
 	/// <summary>Dispatch tells the unit that this call is code 4 while the unit was code 3 responding - Example: if the unit is not IsUnitInTime() then execute Disregard() </summary>
 	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
     public static void Disregard(AiCalloutManager given_mO)
 
 
-	/// <summary>Get in the Vehicle and dismiss </summary>
-	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
-    public static void EnterAndDismiss(AiCalloutManager given_mO)
-
-
 	/// <summary>for fatal Errors. This will be anyway executed by us if the try comes back as a catch or returning setup(), proccess() or end() as false </summary>
 	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
     public static void AbortCode(AiCalloutManager given_mO)
-
-
-	/// <summary>function that checks condition wheter is the possibility or the status of the player will may, maynot lead to an playercallout</summary>
-	/// <param name="given_mO">Calling a specific AiCalloutManager object. If you want to call your own manager object, use the AiCallout functions.</param>
-    public static void IsAiTakingCare(AiCalloutManager given_mO)
 
 
 	/// <summary>Triggering one of the universal PlayerCallouts</summary><param name="PlayerCalloutName">String name of the playercallout. Should look like this: "Officer in Pursuit/>"</param>
