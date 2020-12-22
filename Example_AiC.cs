@@ -9,7 +9,7 @@ using AmbientAICallouts.API;
 
 namespace Example_AiC
 {
-    //Its very important to use these unless the AiCallout will not be compatible with the player callouts
+    //Its very important to use combine every createt object with these unless the AiCallout will not be compatible with the player callouts and cant be cleaned up correctly in case of an error.
     ///String SceneInfo
     ///Vector3 location
     ///String callSign
@@ -69,7 +69,6 @@ namespace Example_AiC
                     }
                     else //if the player is not responding as additional
                     { 
-
                         if (IsAiTakingCare()) //do something without calling the player for backup
                         {
                             //doStuff
@@ -78,7 +77,7 @@ namespace Example_AiC
                         {
                         
                             //decision tree what callout shall get triggered
-                            switch (new Random().Next(0, 5))                                                                                                           //FOR VIDEO EDITING
+                            switch (new Random().Next(0, 5))
                             {
                                 case 0:
                                     UnitCallsForBackup("AAIC-OfficerDown");
@@ -104,7 +103,7 @@ namespace Example_AiC
 
         public override bool End()
         {
-            //Code for finishing the the scene. return true when Succesfull.
+            //Code that finishes the the scene. Return true when Succesfull.
             //Example idea: Cops getting back into their vehicle. drive away dismiss the rest. after 90 secconds delete if possible entitys that have not moved away.
             try
             {
