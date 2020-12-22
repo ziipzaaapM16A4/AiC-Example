@@ -9,7 +9,7 @@ using AmbientAICallouts.API;
 
 namespace Example_AiC
 {
-    //Its very important to use combine every createt object with these unless the AiCallout will not be compatible with the player callouts and cant be cleaned up correctly in case of an error.
+    //Its very important to combine every created object with these below unless the AiCallout will not be compatible with the player callouts and cant be cleaned up correctly in case of an error.
     ///String SceneInfo
     ///Vector3 location
     ///String callSign
