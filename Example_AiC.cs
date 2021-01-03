@@ -32,9 +32,20 @@ namespace Example_AiC
             {
                 SceneInfo = "Example AiCallout";
                 location = World.GetNextPositionOnStreet(Unit.Position.Around2D(Functions.minimumAiCalloutDistance, Functions.maximumAiCalloutDistance));
+                bool posFound = false;
+                int trys = 0;
+                while (!posFound && trys < 20)
+                {
+                    location = World.GetNextPositionOnStreet(Unit.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
+                    if (Unit.Position.DistanceTo(location) > Functions.minimumAiCalloutDistance
+                     && Unit.Position.DistanceTo(location) < Functions.maximumAiCalloutDistance)
+                        posFound = true;
+                    trys++;
+                }
                 calloutDetailsString = "EMERGENCY_CALL";
                 return true;
             }
+            catch (System.Threading.ThreadAbortException) { return false; }
             catch (Exception e)
             {
                 LogTrivial_withAiC("ERROR: in AICallout object: At Setup(): " + e);
@@ -91,6 +102,7 @@ namespace Example_AiC
                 }
                 return true;
             }
+            catch (System.Threading.ThreadAbortException) { return false; }
             catch (Exception e)
             {
                 LogTrivial_withAiC("ERROR: in AICallout object: At Process(): " + e);
@@ -107,6 +119,7 @@ namespace Example_AiC
                 //doStuff
                 return true;
             }
+            catch (System.Threading.ThreadAbortException) { return false; }
             catch (Exception e)
             {
                 LogTrivial_withAiC("ERROR: in AICallout object: At End(): " + e);
