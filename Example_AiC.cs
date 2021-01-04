@@ -26,11 +26,15 @@ namespace Example_AiC
         public override bool Setup()
         {
             //Code for setting the scene. return true when Succesfull. 
-            //Important: Please set a calloutDetailsString and SceneInfo to ensure that your callout has a something a civilian can report.
+            //IMPORTANT: objects like --> SceneInfo, location, calloutDetailsString, responseType, arrivalDistanceThreshold
+            //needs to be set in the Setup() function. If not Values will not be used correctly. 
+            //responseType, arrivalDistanceThreshold dont need to be set. they got Default Values. 
             //Example idea: Place a Damaged Vehicle infront of a Pole and place a swearing ped nearby.
             try
             {
-                SceneInfo = "Example AiCallout";
+                SceneInfo = "Example AiCallout";                                        //What happend?
+                calloutDetailsString = "EMERGENCY_CALL";                                //What happend as scanner audio file
+                responseType = AmbientAICallouts.AiCalloutManager.ResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
                 location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
                 bool posFound = false;
                 int trys = 0;
@@ -42,7 +46,6 @@ namespace Example_AiC
                         posFound = true;
                     trys++;
                 }
-                calloutDetailsString = "EMERGENCY_CALL";
                 return true;
             }
             catch (System.Threading.ThreadAbortException) { return false; }
