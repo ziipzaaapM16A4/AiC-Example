@@ -34,7 +34,7 @@ namespace Example_AiC
             {
                 SceneInfo = "Example AiCallout";                                        //What happend?
                 calloutDetailsString = "EMERGENCY_CALL";                                //What happend as scanner audio file
-                responseType = AmbientAICallouts.AiCalloutManager.ResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
+                responseType = EResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
                 location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
                 bool posFound = false;
                 int trys = 0;
