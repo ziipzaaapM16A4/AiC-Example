@@ -69,7 +69,7 @@ namespace Example_AiC
                 else  //if vehicle is reaching its location
                 {
 
-                    GameFiber.WaitWhile(() => Unit.Position.DistanceTo(location) >= 40f, 0); //Slow down the unit to not rush into the scene
+                    GameFiber.WaitWhile(() => Unit.Position.DistanceTo(location) >= 40f, 25000); //Slow down the unit to not rush into the scene
                     Unit.IsSirenSilent = true;
                     Unit.TopSpeed = 12f;
 
