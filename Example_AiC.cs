@@ -33,16 +33,16 @@ namespace Example_AiC
             try
             {
                 SceneInfo = "Example AiCallout";                                        //What happend?
-                calloutDetailsString = "EMERGENCY_CALL";                                //What happend as scanner audio file
-                responseType = EResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
-                location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
+                CalloutDetailsString = "EMERGENCY_CALL";                                //What happend as scanner audio file
+                ResponseType = EResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
+                Location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
                 bool posFound = false;
                 int trys = 0;
                 while (!posFound && trys < 20)
                 {
-                    location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
-                    if (location.DistanceTo(Game.LocalPlayer.Character.Position) > AmbientAICallouts.API.Functions.minimumAiCalloutDistance
-                     && location.DistanceTo(Game.LocalPlayer.Character.Position) < AmbientAICallouts.API.Functions.maximumAiCalloutDistance)
+                    Location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
+                    if (Location.DistanceTo(Game.LocalPlayer.Character.Position) > AmbientAICallouts.API.Functions.minimumAiCalloutDistance
+                     && Location.DistanceTo(Game.LocalPlayer.Character.Position) < AmbientAICallouts.API.Functions.maximumAiCalloutDistance)
                         posFound = true;
                     trys++;
                 }
@@ -62,19 +62,19 @@ namespace Example_AiC
             //Example idea: Cops arrive; Getting out; Starring at suspects; End();
             try
             {
-                if (!IsUnitInTime(100f, 130))  //if vehicle is never reaching its location
+                if (!IsUnitInTime(Units[0].PoliceVehicle, 100f, 130))  //if vehicle is never reaching its location
                 {
                     Disregard();
                 }
                 else  //if vehicle is reaching its location
                 {
 
-                    GameFiber.WaitWhile(() => Unit.Position.DistanceTo(location) >= 40f, 25000); //Slow down the unit to not rush into the scene
-                    Unit.IsSirenSilent = true;
-                    Unit.TopSpeed = 12f;
+                    GameFiber.WaitWhile(() => Units[0].PoliceVehicle.Position.DistanceTo(Location) >= 40f, 25000); //Slow down the unit to not rush into the scene
+                    Units[0].PoliceVehicle.IsSirenSilent = true;
+                    Units[0].PoliceVehicle.TopSpeed = 12f;
 
-                    GameFiber.SleepUntil(() => location.DistanceTo(Unit.Position) < arrivalDistanceThreshold + 5f /* && Unit.Speed <= 1*/, 30000);
-                    OfficersLeaveVehicle(true);
+                    GameFiber.SleepUntil(() => Location.DistanceTo(Units[0].PoliceVehicle.Position) < arrivalDistanceThreshold + 5f /* && Unit.Speed <= 1*/, 30000);
+                    OfficersLeaveVehicle(Units[0], true);
 
                     if (playerRespondingInAdditon) //if the player responds as a additional unit to the AiCallout
                     {
