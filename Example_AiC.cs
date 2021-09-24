@@ -62,7 +62,7 @@ namespace Example_AiC
             //Example idea: Cops arrive; Getting out; Starring at suspects; End();
             try
             {
-                if (!IsUnitInTime(Units[0].PoliceVehicle, 100f, 130))  //if vehicle is never reaching its location
+                if (!IsUnitInTime(Units[0], 100f, 130))  //if vehicle is never reaching its location
                 {
                     Disregard();
                 }
