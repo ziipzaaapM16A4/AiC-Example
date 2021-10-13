@@ -35,16 +35,21 @@ namespace Example_AiC
                 SceneInfo = "Example AiCallout";                                        //What happend?
                 CalloutDetailsString = "EMERGENCY_CALL";                                //What happend as scanner audio file
                 ResponseType = EResponseType.Code3;   //Code 3 - lights and siren, Code 2 - normal response 
-                Location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
+                Vector3 proposedPosition = Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 15f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 15f);
                 bool posFound = false;
                 int trys = 0;
-                while (!posFound && trys < 20)
+                while (!posFound && trys < 30)
                 {
-                    Location = World.GetNextPositionOnStreet(Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 10f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 10f));
-                    if (Location.DistanceTo(Game.LocalPlayer.Character.Position) > AmbientAICallouts.API.Functions.minimumAiCalloutDistance
-                     && Location.DistanceTo(Game.LocalPlayer.Character.Position) < AmbientAICallouts.API.Functions.maximumAiCalloutDistance)
+                    proposedPosition = Game.LocalPlayer.Character.Position.Around(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 15f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 15f);
+                    Rage.Native.NativeFunction.Natives.GET_SAFE_COORD_FOR_PED<bool>(proposedPosition, true, out proposedPosition, 16);  //Finding a Place on the pavement
+                    Location = proposedPosition;
+
+
+                    if (Functions.IsLocationAcceptedBySystem(Location))
                         posFound = true;
+
                     trys++;
+                    if (trys >= 30) return false;
                 }
                 return true;
             }
