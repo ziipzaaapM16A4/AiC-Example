@@ -38,7 +38,7 @@ namespace Example_AiC
                 Vector3 proposedPosition = Game.LocalPlayer.Character.Position.Around2D(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 15f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 15f);
                 bool posFound = false;
                 int trys = 0;
-                while (!posFound && trys < 30)
+                while (!posFound)
                 {
                     proposedPosition = Game.LocalPlayer.Character.Position.Around2D(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 15f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 15f);
                     Rage.Native.NativeFunction.Natives.GET_SAFE_COORD_FOR_PED<bool>(proposedPosition, true, out proposedPosition, 16);  //Finding a Place on the pavement
@@ -49,7 +49,7 @@ namespace Example_AiC
                         posFound = true;
 
                     trys++;
-                    if (trys >= 30) return false;
+                    if (trys >= 30) { LogTrivial_withAiC("ERROR: in AICallout object: At Setup(): unable to find safe coords for this event"); return false; }
                 }
                 return true;
             }
