@@ -42,7 +42,7 @@ namespace Example_AiC
                 while (!posFound)
                 {
                     proposedPosition = Game.LocalPlayer.Character.Position.Around2D(AmbientAICallouts.API.Functions.minimumAiCalloutDistance + 15f, AmbientAICallouts.API.Functions.maximumAiCalloutDistance - 15f);
-                    Rage.Native.NativeFunction.Natives.GET_SAFE_COORD_FOR_PED<bool>(proposedPosition, demandPavement, out proposedPosition, 16);  //Finding a Place on the pavement
+                    Rage.Native.NativeFunction.Natives.xB61C8E878A4199CA<bool>(proposedPosition, demandPavement, out proposedPosition, 16); //GET_SAFE_COORD_FOR_PED //Finding a Place on the pavement 
                     Location = proposedPosition;
 
 
